@@ -1,0 +1,37 @@
+import example.*
+
+
+test "sueldo neto de gerente es de 1000" {
+	assert.equals(1000,gerente.neto())
+}
+test "sueldo neto de cadetes es de 1500" {
+	assert.equals(1500,cadetes.neto())
+}
+test "bono presentismo de 100"{
+	var dias=0
+	assert.equals(100,bonoxpresentismo.bono(dias))
+}
+test "bono presentismo de 50"{
+	var dias=1
+	assert.equals(50,bonoxpresentismo.bono(dias))
+}
+test "bono por no presentismo"{
+	assert.equals(0,bonoNopresentismo.bono())
+}
+test "bono por resultado excelente de gerente"{
+	var categoria=gerente
+	assert.equals(100, bonoxresultadoexcelente.bono(categoria))
+}
+test "bono por resultado excelente de cadetes"{
+	var categoria=cadetes
+	assert.equals(150, bonoxresultadoexcelente.bono(categoria))
+}
+test "bono por resultado bueno"{
+	assert.equals(80, bonoxresultadobueno.bono())
+}
+test "bono sin resultado"{
+	assert.equals(0,bonosinresultado.bono())
+}
+test "sueldo total excelencia de gerente"{
+	assert.equals(1200,pepe.sueldo( bonoxpresentismo, bonoxresultadoexcelente))
+}
